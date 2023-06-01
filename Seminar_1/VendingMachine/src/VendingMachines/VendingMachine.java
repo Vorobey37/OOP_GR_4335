@@ -42,4 +42,10 @@ public class VendingMachine {
     public void addProduct (Product prod) {
         products.add(prod);
     }
+
+    public void printProducts() {
+        for(Product prod: products){
+            System.out.println(prod.toString());
+        }
+    }
 }

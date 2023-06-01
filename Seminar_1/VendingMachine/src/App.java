@@ -1,4 +1,5 @@
 import Domen.Bottle;
+import Domen.HotDrinks;
 import Domen.Product;
 import VendingMachines.VendingMachine;
 
@@ -13,15 +14,13 @@ public class App {
         iMachine.addProduct(item2);
         iMachine.addProduct(new Product(3, "Вологжанка", "Масло", 125));
         iMachine.addProduct(new Bottle(4, "Архыз", "Water", 45, 1000));
+        Product item5 = new HotDrinks(5, "Капучино", "Coffee", 90, 200, 85);
+        iMachine.addProduct(item5);
+        iMachine.addProduct(new HotDrinks(6, "Tess", "Tea", 30, 200, 95));
+        iMachine.addProduct(new HotDrinks(7, "Американо", "Coffee", 80, 100, 85));
 
-        for(Product prod: iMachine.getProducts()){
-            System.out.println(prod.toString());
-        }
-        // System.out.println(item1.toString());
-        // System.out.println(item2.toString());
-
-
-        //System.out.println("Hello, World!");
+        iMachine.printProducts();
+        
+        
     }
 }
-
