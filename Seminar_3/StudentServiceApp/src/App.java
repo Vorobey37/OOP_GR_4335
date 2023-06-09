@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
+import Controllers.EmploeeController;
+import Services.AverageAge;
+import StudentDomen.Emploee;
+import StudentDomen.PersonComparator;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
 import StudentDomen.StudentSteam;
@@ -14,6 +19,10 @@ public class App {
         User user1 = new User("Алексей", "Воробьев", 39);
         Student user2 = new Student("Алексей", "Воробьев", 39, 101);
         Student user3 = new Student("Андрей", "Галкин", 29, 156);
+
+        PersonComparator <Student> comp = new PersonComparator<>();
+        //System.out.println(comp.compare(user2, user3));
+
         Student user4 = new Student("Василий", "Синицын", 39, 278);
         Student user5 = new Student("Иван", "Орлов", 29, 365);
         Student user6 = new Student("Дарья", "Лебедева", 25, 89);
@@ -49,28 +58,44 @@ public class App {
 
         StudentSteam steam = new StudentSteam(steamList, 1);
 
-        System.out.println(studentGroup3);
-        System.out.println();
-        System.out.println(steam);
-        System.out.println();
+        // System.out.println(studentGroup3);
+        // System.out.println();
+        // System.out.println(steam);
+        // System.out.println();
 
-        Collections.sort(steam.getSteamList());
+        // Collections.sort(steam.getSteamList());
 
-        for (StudentGroup group : steam) {
-            System.out.println("Группа № " + group.getId() + ":");
-            for (Student stud : group) {
-                System.out.println(stud);
-            }
-        }
-        System.out.println();
+        // for (StudentGroup group : steam) {
+        //     System.out.println("Группа № " + group.getId() + ":");
+        //     for (Student stud : group) {
+        //         System.out.println(stud);
+        //     }
+        // }
+        // System.out.println();
 
-        /* или можно так, я по условию не понял, как надо,
-         и так, и так выдает список студентов:*/
-        for (StudentGroup group : steam) {
-            System.out.println(group);
-        }
-        System.out.println();
+        // /* или можно так, я по условию не понял, как надо,
+        //  и так, и так выдает список студентов:*/
+        // for (StudentGroup group : steam) {
+        //     System.out.println(group);
+        // }
+        // System.out.println();
 
-       
+       Emploee pers1 = new Emploee("Иван", "Иванов", 35, "дворник");
+    
+       //EmploeeController empContr = new EmploeeController();      
+       //empContr.paySalary(user1);
+       //EmploeeController.paySalary(pers1);
+
+       // там у меня уже был создан список студентов, им и воспользуюсь для примера. 
+       System.out.println(AverageAge.averageAgeMean(groupList1));
+
+       // а еще можно объекты разных классов добавить для примера (с полиморфизмом)
+       List<User> allTypeList = new ArrayList<User>();
+       allTypeList.add(user1);
+       allTypeList.add(user2);
+       allTypeList.add(user12);
+       allTypeList.add(pers1);
+       System.out.println(AverageAge.averageAgeMean(allTypeList));
+
     }
 }
