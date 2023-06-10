@@ -84,7 +84,7 @@ public class App {
     
        //EmploeeController empContr = new EmploeeController();      
        //empContr.paySalary(user1);
-       //EmploeeController.paySalary(pers1);
+       EmploeeController.paySalary(pers1);
 
        // там у меня уже был создан список студентов, им и воспользуюсь для примера. 
        System.out.println(AverageAge.averageAgeMean(groupList1));
