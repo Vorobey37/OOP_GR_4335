@@ -1,6 +1,7 @@
 package Controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import Model.HashModel;
@@ -15,20 +16,30 @@ public class Controller {
     private iGetModel model;
     private List<Student> students;
     private HashModel mapModel;
+
     
 
     public Controller(iGetView view, iGetModel model) {
         
         this.view = view;
-        viewEng = new ViewEng();
-        viewRus = new View();
+        this.viewEng = new ViewEng();
+        this.viewRus = new View();
         this.model = model;
         this.students = new ArrayList<Student>();
-        //this.viewList = new ArrayList<iGetView>();
+        this.mapModel = new HashModel(model.getAllStudents());
+        
     }
 
     public void getAllStudents(){
         students = model.getAllStudents();
+    }
+
+    /**
+     * создаем HashMap студентов
+     * @return HashMap студентов
+     */
+    public HashMap<Long, Student> createStudentMap(){
+       return mapModel.createStudentMap();
     }
 
     public boolean testData(){

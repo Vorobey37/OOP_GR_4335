@@ -36,12 +36,13 @@ public class App {
 
         iGetModel model = new Model(students);
         iGetModel newModel = fModel;
+        //HashModel studentMap = new HashModel(students);
         Controller contr = new Controller(view, model);
         //contr.update();
         contr.getAllStudents();
         contr.run();
-
-        HashModel map = new HashModel(students);
-        System.out.println(map.createStudentMap());
+        System.out.println(contr.createStudentMap());
+        
+        
     }
 }
